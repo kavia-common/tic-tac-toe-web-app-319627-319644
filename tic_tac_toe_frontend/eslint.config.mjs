@@ -4,6 +4,14 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default [
+  {
+    ignores: [
+      // Astro generates type files here; they often contain `any` and triple-slash references.
+      '.astro/**',
+      'dist/**',
+    ],
+  },
+
   js.configs.recommended,
 
   // TypeScript support
